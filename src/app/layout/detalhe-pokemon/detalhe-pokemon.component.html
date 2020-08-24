@@ -1,0 +1,21 @@
+<div class="media row" *ngIf="card != undefined">
+    <img class="align-self-end mr-3 img-fluid col-md-6 col-12" src="{{card.imageUrlHiRes}}" alt="Imagem de exemplo genérica">
+    <div class="media-body col-md-6 col-12">
+      <h5 class="mt-0">Nome: {{card.name}}</h5>
+      <p>Tipo: <span *ngFor="let item of card.types">{{item}}</span> </p>
+      <p>Lista de ataques com:</p>
+      <ul *ngFor="let attacks of card.attacks">
+            <li>Custo de “mana”: {{attacks.convertedEnergyCost}}</li>
+            <li>Nome da Habilidade: {{attacks.name}}</li>
+            <li>Dano: {{attacks.damage}}</li>
+            <li>Descrição: {{attacks.text}}</li>
+      </ul>
+      
+      <ul *ngFor="let weaknesses of card.weaknesses">
+          <li>Fraqueza: {{weaknesses.type}}</li>
+          <li>Resistencia: {{weaknesses.value}}</li>
+      </ul>
+      
+
+    </div>
+  </div>
